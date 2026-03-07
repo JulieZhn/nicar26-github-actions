@@ -16,24 +16,19 @@ Use this mental model for most newsroom automation:
 1. Open your repo on GitHub.com.
 2. Click the **Actions** tab.
 3. Select a workflow in the left panel.
-4. Click **Run workflow** (top right), choose branch (`main`), click **Run workflow** again.
+4. Click **Run workflow** (top right)
 5. Open the new run at the top of the list. (may need to refresh)
 6. Click the job name.
 7. Open each step and read logs in order:
-   - checkout/setup
-   - fetch raw data
-   - parse/build CSV
-   - commit/push
 8. Confirm output files changed in the repo (for example, in `data/` or another output folder you track).
 
 ## 3) What To Watch For (Quotas and Limits)
 
-Track two buckets:
-
 1. **GitHub Actions usage**
-   - Runner minutes (private repos), artifact storage, and cache storage.
+   - Runner minutes (private repos) and storage limits.
    - Check: **Repo/Org Settings -> Billing and plans -> Usage**.
    - [GitHub Pricing](https://github.com/pricing)
+   - [GitHub storage limits](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github)
 
 2. **Data/API provider quotas**
    - API credits/requests (often the first limit you hit).
@@ -50,9 +45,7 @@ Good safeguards:
 - Monitoring a fixed event/listing and tracking price or count changes. (ticket prices)
 - Running QA checks on incoming data, such as schema, null checks, row-count checks. (messy government data)
 - Refreshing publish-ready outputs before newsroom meetings. (generating charts)
-- Triggering alerts or follow-up jobs when thresholds are crossed. (sending newsroom Slack when new campaign finance filing is published)
-
-Use Actions when the work is repetitive, timestamped, and benefits from a visible audit trail in Git.
+- Triggering alerts or follow-up jobs when thresholds are crossed. (sending newsroom Slack when new campaign finance filing is published) or when gas prices go above $X
 
 # Further resources
 

@@ -21,11 +21,10 @@ Focus on:
 - `schedule` for recurring runs.
 - Python step that calls a Redivis notebook updater via API.
 
-### 3) Fork and clone this repo
+### 3) Fork this repo
 
 1. Fork this repository to your own GitHub account.
-2. Clone your fork to your own computer.
-3. Open your fork on GitHub and confirm the `Actions` tab is available.
+2. Open your fork on GitHub and confirm the `Actions` tab is available.
 
 ### 4) Inspect the first YAML file: ticket prices
 
@@ -38,7 +37,7 @@ Check what this workflow does:
 - Pulls StubHub event HTML.
 - Runs `scripts/analyze_stubhub_big10wbt.py`.
 - Appends a timestamped row to `data/stubhub_big10wbt_session7_history.csv`.
-- Commits sanitized classroom-safe HTML to `data/raw_public/`. (removing API keys from the html file)
+- Commits sanitized classroom-safe HTML to `data/raw_public/` (removing API keys from the html file) and `data/stubhub_big10wbt_session7_history.csv`
 
 ### 5) Run `workflow_dispatch` for ticket prices
 
@@ -61,7 +60,7 @@ Check what this workflow does:
 - Calls The Odds API for WNCAAB moneyline odds.
 - Runs `scripts/fetch_wncaab_odds.py`.
 - Writes raw JSON snapshots and appends CSV rows.
-- Make a change to the frequency of how often it runs.
+- Commits to this repository
 
 ### 7) Set up API key for sports odds
 
